@@ -1,0 +1,35 @@
+###
+POST http://localhost:9000/api/users HTTP/1.1
+Content-Type: application/json
+
+{   
+
+    "name": "Pablo Salerno",
+    "age": 24,
+    "email": "psalerno@hotmail.com"
+
+}  
+
+###
+GET http://localhost:9000/api/users HTTP/1.1
+
+###
+GET http://localhost:9000/api/users/665e7c19bc45dd7a588b4a59 HTTP/1.1
+
+###
+
+PUT http://localhost:9000/api/users/665e7c19bc45dd7a588b4a59 HTTP/1.1
+Content-Type: application/json
+
+{   
+
+    "name": "Maria Victoria Endendyk",
+    "age": 21,
+    "email": "vickyend@gmail.com"
+
+}  
+
+###
+
+DELETE http://localhost:9000/api/users/665e7c11bc45dd7a588b4a55 HTTP/1.1
+
