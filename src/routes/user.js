@@ -1,6 +1,5 @@
 const express = require("express"); //Se llama al modulo express
 const userSchema = require("../models/user");
-
 const router = express.Router(); // Es un constructor que sirve para crear un enrutador.
 
 //Se define la ruta para crear un usuario - create user. 
@@ -35,9 +34,9 @@ router.get("/users/:id", (req, res) => {
 
   router.put("/users/:id", (req, res) => {
     const { id } = req.params;
-    const { name, age, email } = req.body;
+    const { usuario, email, contraseña } = req.body;
     userSchema
-      .updateOne({ _id: id }, { $set: { name, age, email } })
+      .updateOne({ _id: id }, { $set: { usuario, email, contraseña } })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });

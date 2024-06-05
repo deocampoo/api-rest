@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 require('dotenv').config();
 const userRoutes = require('./routes/user');
+const favoriteMoviesRouter = require('./routes/favoriteMovies');
+
 
 
 
@@ -12,7 +14,7 @@ const port = process.env.PORT || 9000;
 //middleware
 app.use(express.json());
 app.use('/api', userRoutes);
-
+app.use('/api/favorites', favoriteMoviesRouter);
 // routes
 
 app.get("/", (req, res) => {
